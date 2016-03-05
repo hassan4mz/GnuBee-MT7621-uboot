@@ -38,7 +38,7 @@
 #include <oled.h>
 #endif
 DECLARE_GLOBAL_DATA_PTR;
-cmd_tbl_t *p_gmdtp;//用于httpd.c中固件更新完后重启内核
+cmd_tbl_t *p_gmdtp;
 #undef DEBUG
 
 #define SDRAM_CFG1_REG RALINK_SYSCTL_BASE + 0x0304
@@ -605,15 +605,15 @@ init_fnc_t *init_sequence[] = {
 void printBanner(void)
 {
     printf("\n\n");
-    printf("       _           _____         _____\n");
-    printf("       /           /    )        /    )   ♥\n");
-    printf("      /           /    /        /____/       ___   ___   __\n");
-    printf("     /           /    /        /        /   /   ) /   ) /__)  /   /\n");
-    printf("   _/____/ ♠    /____/   ♣    /        /   /   / /   / (_    (___/ ♦\n");
-    printf("                                                                /\n");
-    printf("                                                          _____/\n");
+    printf("  _____            ______  \n");          
+    printf(" |  __ \           | ___ \  \n");         
+    printf(" | |  \/_ __  _   _| |♣/ / ___  ___  \n");
+    printf(" | | __| '_ \| | | | ___ \/ _ \/ _ \ \n");
+    printf(" | |_\ \ |♥| | |♠| | |♦/ /   _/  __/ \n");
+    printf("  \____/_| |_|\__,_\____/ \___|\___| \n");
+	printf("\n");
     printf("-------------------------------------------------------------------------\n");
-    printf("             https://github.com/pinney/MT7621-u-boot-mod\n");
+    printf("             https://github.com/gnubee-git\n");
     printf("-------------------------------------------------------------------------\n");
 }
 void board_init_f(ulong bootflag)
